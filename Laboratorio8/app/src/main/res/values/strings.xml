@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movil</string>
+    <string name="dispositivos_moviles">Dispositivos Moviles</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="titulo_barra">Programación Moviles</string>
+    <string name="logo_unam">Logo UNAM</string>
+    <string name="abrir">Abrir</string>
+    <string name="cerrar">Cerrar</string>
+</resources>
