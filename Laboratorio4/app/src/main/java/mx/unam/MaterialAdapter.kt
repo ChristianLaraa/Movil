@@ -12,8 +12,10 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class MaterialAdapter(private val context: Context, private val listaTarjetas: ArrayList<Card>) :
-    RecyclerView.Adapter<MaterialAdapter.ViewHolder>() {
+class MaterialAdapter(
+    private val context: Context,
+    private val listaTarjetas: ArrayList<Card>
+) : RecyclerView.Adapter<MaterialAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var inicial: TextView = view.findViewById(R.id.initial)
@@ -23,20 +25,17 @@ class MaterialAdapter(private val context: Context, private val listaTarjetas: A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val li = LayoutInflater.from(parent.context)
-        val v = li.inflate(R.layout.card_view_holder, parent, false)
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.card_view_holder, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val tarjeta = listaTarjetas[position]
-        val name: String? = tarjeta.nombre
-        val color: Int = tarjeta.color_recurso
+        val name: String? = listaTarjetas[position].nombre
+        val color: Int = listaTarjetas[position].color_recurso
 
         holder.inicial.setBackgroundColor(color)
-        // Agregamos una validación simple para evitar errores si el nombre es nulo o vacío
-        holder.inicial.text = if (!name.isNullOrEmpty()) name.substring(0, 1) else "?"
-
+        holder.inicial.text = name?.substring(0, 1)
         holder.nombreTarjeta.text = name
         holder.imagenView.setImageResource(R.drawable.libreria_img1)
 
@@ -45,15 +44,9 @@ class MaterialAdapter(private val context: Context, private val listaTarjetas: A
         }
     }
 
-    private fun setOnClickListener(function: () -> Unit) {}
+    override fun getItemCount(): Int = listaTarjetas.size
 
-    override fun getItemCount(): Int {
-        return listaTarjetas.size
-    }
-
-    override fun getItemId(position: Int): Long {
-        return listaTarjetas[position].id
-    }
+    override fun getItemId(position: Int): Long = listaTarjetas[position].id
 
     override fun onViewAttachedToWindow(holder: ViewHolder) {
         super.onViewAttachedToWindow(holder)
@@ -61,18 +54,17 @@ class MaterialAdapter(private val context: Context, private val listaTarjetas: A
     }
 
     private fun animateCircularReveal(view: View) {
-        // Post para asegurar que el view ya tiene dimensiones medidas (width y height)
         view.post {
             val centroX = 0
-            val centerY = 0
+            val centroY = 0
             val inicioRadius = 0.0f
             val finRadius = kotlin.math.max(view.width, view.height).toFloat()
 
-            if (view.isAttachedToWindow) {
+            if (finRadius > 0) {
                 val animacion: Animator = ViewAnimationUtils.createCircularReveal(
                     view,
                     centroX,
-                    centerY,
+                    centroY,
                     inicioRadius,
                     finRadius
                 )

@@ -1,11 +1,4 @@
 <resources>
-    <string name="app_name">laboratorio 4</string>
-    <string-array name="lenguajes">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>C</item>
-        <item>C++</item>
-        <item>Ruby</item>
-        <item>Java</item>
-    </string-array>
+    <string name="app_name">Laboratorio 4</string>
+    <string name="title_activity_nested_scroll_view">Nested Scroll View</string>
 </resources>
