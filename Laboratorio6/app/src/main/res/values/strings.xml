@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">Laboratorio 6</string>
+    <string name="app_name">Laboratorio_Seis</string>
+
+    <!-- Descripciones de imágenes -->
+    <string name="libreria">Imagen de librería</string>
+    <string name="data_analysis">Portada Python for Data Analysis</string>
+    <string name="genero_educacion">Género: Educación</string>
+
+    <!-- Datos del libro -->
+    <string name="python_for_data_analysis">Python for Data Analysis</string>
+    <string name="idioma_ingles">Idioma: Inglés</string>
+
+    <!-- Botones de compra -->
+    <string name="ebook">EBOOK $180.00</string>
+    <string name="fisico_250">FÍSICO $250.00</string>
+
+    <!-- Texto descriptivo del libro -->
+    <string name="texto_libro">Get complete access to all content and resources for Python for Data Analysis. This book covers data manipulation, analysis, and visualization using Python libraries such as NumPy, pandas and more.</string>
+
+    <!-- Labels de secciones -->
+    <string name="categoria">Categoría</string>
+    <string name="relacionados">Relacionados</string>
+    <string name="editorial">Editorial</string>
+
+    <!-- Content descriptions de los FABs -->
+    <string name="edicion">Ver relacionados</string>
+    <string name="ediciondos">Ver editorial</string>
+    <string name="ediciontres">Ver categoría</string>
 </resources>

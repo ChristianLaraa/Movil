@@ -1,4 +1,4 @@
-package mx.unam.laboratorio6
+package mx.unam
 
 import org.junit.Test
 
